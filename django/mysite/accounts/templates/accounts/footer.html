@@ -1,0 +1,124 @@
+
+<div id="footer">
+
+    <footer class="footer">
+        <div class="copyright">
+            <p class="sectionTitle title">LIBRARIA</p>
+            Copyright &copy;All rights reserved.
+        </div>
+        <div class="container1">
+            <a href="{% url 'home' %}" id="home">HOME</a><br>
+            <a href="{% url 'browse' %}" id="booksearch">BROWSE</a><br>
+            <p class="SectionTitle" style="color:white;">ABOUT</p>
+            <div class="section">LIbraria is here to help to get the books with ease and simplicity. It contains dozens
+                of books of different categories.</div>
+        </div>
+        <div class="container2">
+
+            <div class="SectionTitle" style="color:white;">CONTACT</div>
+            <div class="section">
+                <form action="{% url 'savequery' %}" method="POST">
+                    {% csrf_token %}
+                    <input style="width:100%;" type="email" name="emailid" placeholder="Enter your email" id=""><br><br>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="query" placeholder="Type your query here" id="query"
+                            rows="2"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-outline-secondary sm">
+                </form>
+            </div>
+            
+
+        </div>
+
+    </footer>
+</div>  
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:300);
+
+html {
+position: relative;
+
+}
+
+body {
+/* Margin bottom by footer height */
+margin-bottom: 300px;
+}
+
+footer {
+width: 100%;
+}
+
+.footer {
+position: absolute;
+bottom: 0;
+display: flex;
+width: 100%;
+background-color: black;
+color: rgb(173, 169, 169);
+font-family: 'Alegreya Sans', sans-serif;
+
+/* Set the fixed height of the footer here */
+height: 200px;
+align-items: center;
+justify-content: center;
+}
+
+.title {
+font-size: x-large;
+font-weight: 500;
+}
+
+.copyright {
+margin-left: 25px;
+padding-right: 150px;
+list-style: none;
+position: absolute;
+left: 3%;
+}
+
+.sectionTitle {
+margin-bottom: 10px;
+color: white;
+}
+
+.container1 {
+display: flex;
+flex-direction: column;
+width: 600px;
+margin-right: 10%;
+margin-left: 10%;
+justify-content: center;
+
+}
+
+#home {
+text-decoration: none;
+color: white;
+font-weight: 100;
+}
+
+#home:hover {
+color: rgb(173, 169, 169);
+
+}
+#booksearch {
+text-decoration: none;
+color: white;
+font-weight: 100;
+}
+
+#booksearch:hover {
+color: rgb(173, 169, 169);
+
+}
+.container2{
+display: flex;
+flex-direction: column;
+margin-right: 25px;
+padding-left: 150px;
+position: absolute;
+right: 3%;
+}
+</style>
